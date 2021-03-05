@@ -1,0 +1,27 @@
+.form label {
+  display: block;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 14px;
+  color: crimson;
+}
+
+.form label::after {
+  content: ":";
+  margin-left: 2px;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+.form fieldset {
+  margin-bottom: 10px;
+}
+
+.form button {
+  cursor: pointer;
+  text-transform: uppercase;
+}
