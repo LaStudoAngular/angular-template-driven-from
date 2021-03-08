@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -13,20 +13,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class CounterControlComponent implements OnInit, ControlValueAccessor {
-  @Input() value = 0;
-  private step = 1;
+export class CounterControlComponent implements ControlValueAccessor {
+  @Input() step = 1;
+  private _value = 0;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    //
+  get value(): number {
+    return this._value;
   }
 
   onChange(_: any) {}
 
   writeValue(value: number): void {
-    this.value = value;
+    this._value = value;
   }
 
   registerOnChange(fn: any): void {
@@ -38,11 +36,11 @@ export class CounterControlComponent implements OnInit, ControlValueAccessor {
   }
 
   down(): void {
-    this.value -= this.step;
+    this._value -= this.step;
   }
 
   up(): void {
-    this.value += this.step;
+    this._value += this.step;
   }
 
 }
