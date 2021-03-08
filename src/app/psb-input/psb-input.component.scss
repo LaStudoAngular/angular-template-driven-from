@@ -1,10 +1,13 @@
+$size: 28px;
+
 .psb-control {
   display: flex;
   align-items: center;
 
   &__icon {
-    width: 14px;
-    height: 14px;
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
     background-color: chocolate;
     margin-right: 10px;
   }

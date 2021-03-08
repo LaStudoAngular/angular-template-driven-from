@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   psbFormSubmit(value: any): void {
-    console.log('psbFormSubmit(value: any):', value);
+    console.log('psbFormSubmit:', value);
   }
 
   // FOOTER
