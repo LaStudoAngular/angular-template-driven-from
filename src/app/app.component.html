@@ -4,8 +4,8 @@
     <input type="text" name="userFirstName" [(ngModel)]="user.name.first" />
 
     <label>lastname</label>
-    <input type="text" name="userLastName" [(ngModel)]="user.name.last" />
   </fieldset>
+  <input type="text" name="userLastName" [(ngModel)]="user.name.last" />
 
   <fieldset ngModelGroup="address">
     <label>street</label>
@@ -22,3 +22,6 @@
     <button type="submit">submit</button>
   </fieldset>
 </form>
+<fieldset>
+  <td-counter-control></td-counter-control>
+</fieldset>
