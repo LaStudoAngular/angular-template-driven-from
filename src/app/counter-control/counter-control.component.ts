@@ -15,6 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class CounterControlComponent implements ControlValueAccessor {
   @Input() step = 1;
+  @Input() disable = false;
   private _value = 0;
   private onTouched = () => {};
   private onChange = (_: number) => {};
@@ -33,6 +34,10 @@ export class CounterControlComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: () => {}): void {
     this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+      this.disable = isDisabled;
   }
 
   down(): void {
