@@ -33,3 +33,20 @@
     ></td-counter-control>
   </fieldset>
 </form>
+
+<form
+  class="psb-form"
+  #psbForm="ngForm"
+  (ngSubmit)="psbFormSubmit(psbForm.value)"
+>
+  <fieldset>
+    <td-psb-input
+      name="psbInput"
+      [disable]="true"
+      [(ngModel)]="controlValue"
+    ></td-psb-input>
+  </fieldset>
+  <fieldset>
+    <button type="submit">submit</button>
+  </fieldset>
+</form>

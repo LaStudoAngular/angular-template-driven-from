@@ -1,0 +1,15 @@
+.psb-control {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    background-color: chocolate;
+    margin-right: 10px;
+  }
+
+  &__input {
+    //
+  }
+}

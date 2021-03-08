@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterControlComponent } from './counter-control/counter-control.component';
+import { PsbInputComponent } from './psb-input/psb-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterControlComponent
+    CounterControlComponent,
+    PsbInputComponent
   ],
   imports: [
     BrowserModule,

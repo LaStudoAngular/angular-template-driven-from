@@ -34,6 +34,10 @@ export class AppComponent implements OnInit {
     this.appService.sendClient(client);
   }
 
+  psbFormSubmit(value: any): void {
+    console.log('psbFormSubmit(value: any):', value);
+  }
+
   // FOOTER
   // -------------
   constructor(private readonly appService: AppService) {}
