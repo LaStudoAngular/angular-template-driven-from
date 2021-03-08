@@ -18,7 +18,7 @@ export interface Client {
 })
 export class AppComponent implements OnInit {
 
-  controlValue = 10;
+  controlValue = 13;
 
   user: Client = {
     name: {

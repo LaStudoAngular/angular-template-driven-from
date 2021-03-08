@@ -34,7 +34,7 @@ export class CounterControlComponent implements ControlValueAccessor {
   }
 
   writeValue(outsideValue: number): void {
-    this._value = outsideValue;
+    this.value = outsideValue;
   }
 
   registerOnChange(fn: () => {}): void {
