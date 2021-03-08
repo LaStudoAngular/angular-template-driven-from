@@ -18,6 +18,8 @@ export interface Client {
 })
 export class AppComponent implements OnInit {
 
+  controlValue = 10;
+
   user: Client = {
     name: {
       first: '',
@@ -28,11 +30,12 @@ export class AppComponent implements OnInit {
     city: ''
   }
 
-    logForm(client: Client): void {
+  logForm(client: Client): void {
     this.appService.sendClient(client);
   }
 
   // FOOTER
+  // -------------
   constructor(private readonly appService: AppService) {}
 
   ngOnInit(): void {

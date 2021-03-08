@@ -22,6 +22,12 @@
     <button type="submit">submit</button>
   </fieldset>
 </form>
-<fieldset>
-  <td-counter-control></td-counter-control>
-</fieldset>
+
+<form class="super-form" #superForm="ngForm">
+  <fieldset>
+    <td-counter-control
+      name="controlValue"
+      [(ngModel)]="controlValue"
+    ></td-counter-control>
+  </fieldset>
+</form>
