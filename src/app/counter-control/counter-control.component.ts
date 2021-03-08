@@ -24,6 +24,15 @@ export class CounterControlComponent implements ControlValueAccessor {
     return this._value;
   }
 
+  set value(newValue: number) {
+      if (this._value === newValue) {
+          return;
+      }
+      this._value = newValue;
+      this.onChange(this._value);
+      this.onTouched();
+  }
+
   writeValue(outsideValue: number): void {
     this._value = outsideValue;
   }
@@ -42,14 +51,10 @@ export class CounterControlComponent implements ControlValueAccessor {
 
   down(): void {
     this._value -= this.step;
-    this.onChange(this._value);
-    this.onTouched();
   }
 
   up(): void {
     this._value += this.step;
-    this.onChange(this._value);
-    this.onTouched();
   }
 
 }
