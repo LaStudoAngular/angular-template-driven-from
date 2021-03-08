@@ -22,8 +22,7 @@ export class PsbInputComponent implements OnInit, ControlValueAccessor {
   private onTouche = () => {};
 
   get value(): string {
-     let n = this.parts.value;
-     return n.custom;
+     return this.parts.value.custom;
   }
 
   set value(newValue: string) {
