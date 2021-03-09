@@ -22,7 +22,8 @@ export class PsbInputComponent implements OnInit, ControlValueAccessor {
   private onTouche = () => {};
 
   get value(): string {
-     return this.parts.value.custom;
+    console.log('this.parts.value.custom', this.parts.value.custom);
+    return this.parts.value.custom;
   }
 
   set value(newValue: string) {
@@ -32,7 +33,7 @@ export class PsbInputComponent implements OnInit, ControlValueAccessor {
     this.parts.setValue({
       'custom': newValue
     });
-    this.onChange(this.value);
+    this.onChange(this._value);
     this.onTouche();
   }
 
