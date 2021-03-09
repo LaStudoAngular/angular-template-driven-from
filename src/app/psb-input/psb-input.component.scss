@@ -8,11 +8,11 @@ $size: 28px;
     width: $size;
     height: $size;
     border-radius: $size / 2;
-    background-color: chocolate;
+    background-color: firebrick;
     margin-right: 10px;
   }
 
   &__input {
-    //
+    margin-right: 20px;
   }
 }

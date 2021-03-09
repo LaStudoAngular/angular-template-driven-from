@@ -18,7 +18,7 @@ export class PsbInputComponent implements ControlValueAccessor {
 
   onTouchedCallback = () => {};
   private innerValue: string;
-  private onChangeCallback = (value: string) => {};
+  private onChangeCallback = (_: any) => {};
 
   get value(): string {
     return this.innerValue;
@@ -36,8 +36,8 @@ export class PsbInputComponent implements ControlValueAccessor {
     this.value = insideValue;
   }
 
-  writeValue(outSideValue: string): void {
-    this.value = outSideValue;
+  writeValue(outsideValue: string): void {
+    this.value = outsideValue;
   }
 
   registerOnChange(fn: any): void {
