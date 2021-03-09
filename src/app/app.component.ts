@@ -18,7 +18,9 @@ export interface Client {
 })
 export class AppComponent implements OnInit {
 
-  controlValue = 13;
+  controlValue1 = 13;
+  controlValue2 = 10;
+  controlValue3 = 14;
 
   user: Client = {
     name: {
@@ -34,8 +36,12 @@ export class AppComponent implements OnInit {
     this.appService.sendClient(client);
   }
 
-  psbFormSubmit(value: any): void {
+  psbFormSubmit(value: Object): void {
     console.log('psbFormSubmit:', value);
+  }
+
+  quantityFormSubmitter(value: Object): void {
+    console.log('quantityFormSubmitter:', value);
   }
 
   // FOOTER

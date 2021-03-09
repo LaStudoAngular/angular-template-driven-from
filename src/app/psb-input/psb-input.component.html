@@ -1,5 +1,11 @@
-<div class="psb-control" [formGroup]="parts">
+<div class="psb-control">
   <div class="psb-control__icon"></div>
-  <input class="psb-control__input" type="text" formControlName="custom" />
+  <input
+    class="psb-control__input"
+    type="text"
+    [value]="value"
+    (input)="updateValue($event.target.value)"
+    (blur)="onTouche()"
+  />
   {{ value }}
 </div>

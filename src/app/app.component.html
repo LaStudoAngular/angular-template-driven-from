@@ -29,7 +29,7 @@
       name="controlValue"
       [step]="2"
       [disable]="true"
-      [(ngModel)]="controlValue"
+      [(ngModel)]="controlValue3"
     ></td-counter-control>
   </fieldset>
 </form>
@@ -40,17 +40,22 @@
   (ngSubmit)="psbFormSubmit(psbForm.value)"
 >
   <fieldset>
-    <td-psb-input
-      name="psbInput"
-      [disable]="true"
-      [(ngModel)]="controlValue"
-    ></td-psb-input>
+    <td-psb-input name="psbInput" [(ngModel)]="controlValue1"></td-psb-input>
   </fieldset>
   <fieldset>
-    <button type="submit">submit</button>
+    <button type="submit">submit psb form</button>
   </fieldset>
 </form>
 
-<div class="quantity">
-  <td-quantity [(ngModel)]="controlValue"></td-quantity>
-</div>
+<form
+  class="quantity"
+  #quantityForm="ngForm"
+  (ngSubmit)="quantityFormSubmitter(quantityForm.value)"
+>
+  <fieldset>
+    <td-quantity name="quantityInput" [(ngModel)]="controlValue2"></td-quantity>
+  </fieldset>
+  <fieldset>
+    <button type="submit">submit quantity form</button>
+  </fieldset>
+</form>

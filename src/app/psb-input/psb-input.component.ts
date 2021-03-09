@@ -1,5 +1,5 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, forwardRef, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'td-psb-input',
@@ -13,28 +13,28 @@ import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR } from 
     }
   ]
 })
-export class PsbInputComponent implements OnInit, ControlValueAccessor {
+export class PsbInputComponent implements ControlValueAccessor {
   @Input() disable = false;
-  parts: FormGroup;
 
   private _value: string;
   private onChange = (value: string) => {};
-  private onTouche = () => {};
+  onTouche = () => {};
 
   get value(): string {
-    console.log('this.parts.value.custom', this.parts.value.custom);
-    return this.parts.value.custom;
+    return this._value;
   }
 
   set value(newValue: string) {
     if (this._value === newValue) {
       return;
     }
-    this.parts.setValue({
-      'custom': newValue
-    });
+    this._value = newValue;
     this.onChange(this._value);
     this.onTouche();
+  }
+
+  updateValue(insideValue: string): void {
+    this.value = insideValue;
   }
 
   writeValue(outSideValue: string): void {
@@ -51,14 +51,6 @@ export class PsbInputComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.disable = isDisabled;
-  }
-
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.parts = this.fb.group({
-      'custom': ['']
-    })
   }
 
 }
