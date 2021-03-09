@@ -9,7 +9,7 @@
 }
 
 .form label::after {
-  content: ":";
+  content: ':';
   margin-left: 2px;
 }
 
@@ -24,4 +24,11 @@
 .form button {
   cursor: pointer;
   text-transform: uppercase;
+}
+
+.quantity {
+  padding: 20px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-top: 10px;
 }

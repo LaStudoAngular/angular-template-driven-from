@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterControlComponent } from './counter-control/counter-control.component';
 import { PsbInputComponent } from './psb-input/psb-input.component';
+import { QuantityComponent } from './quantity/quantity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterControlComponent,
-    PsbInputComponent
+    PsbInputComponent,
+    QuantityComponent
   ],
   imports: [
     BrowserModule,
