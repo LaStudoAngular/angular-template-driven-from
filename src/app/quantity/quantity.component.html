@@ -1,12 +1,12 @@
-<button (click)="updateValue(+value - 10)" [disabled]="disabled">--</button>
+<!-- <button (click)="updateValue(+value - 10)" [disabled]="disabled">--</button> -->
 <button (click)="updateValue(+value - 1)" [disabled]="disabled">-</button>
 <input
   [value]="value"
-  (change)="updateValue($event.target.value)"
+  (input)="updateValue($event.target.value)"
   (blur)="onTouched()"
   [disabled]="disabled"
   type="text"
 />
 <button (click)="updateValue(+value + 1)" [disabled]="disabled">+</button>
-<button (click)="updateValue(+value + 10)" [disabled]="disabled">++</button>
+<!-- <button (click)="updateValue(+value + 10)" [disabled]="disabled">++</button> -->
 <p>{{ value }}</p>

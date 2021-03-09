@@ -23,7 +23,11 @@
   </fieldset>
 </form>
 
-<form class="super-form" #superForm="ngForm">
+<form
+  class="super-form"
+  #superForm="ngForm"
+  (ngSubmit)="superFormSubmitter(superForm.value)"
+>
   <fieldset>
     <td-counter-control
       name="controlValue"
@@ -31,6 +35,7 @@
       [disable]="true"
       [(ngModel)]="controlValue3"
     ></td-counter-control>
+    <button type="submit">super form submitter</button>
   </fieldset>
 </form>
 

@@ -5,7 +5,7 @@
     type="text"
     [value]="value"
     (input)="updateValue($event.target.value)"
-    (blur)="onTouche()"
+    (blur)="onTouchedCallback()"
   />
   {{ value }}
 </div>

@@ -12,7 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   }],
 })
 export class QuantityComponent implements ControlValueAccessor {
-  private onChange = (value: any) => {};
+  private onChange = (value: number) => {};
   onTouched = () => console.log('input touched');
   value = 0;
   disabled = false;

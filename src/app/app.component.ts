@@ -36,6 +36,10 @@ export class AppComponent implements OnInit {
     this.appService.sendClient(client);
   }
 
+  superFormSubmitter(value: Object): void {
+    console.log('superFormSubmitter', value);
+  }
+
   psbFormSubmit(value: Object): void {
     console.log('psbFormSubmit:', value);
   }

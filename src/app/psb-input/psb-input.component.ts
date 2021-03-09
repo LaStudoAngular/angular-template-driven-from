@@ -16,21 +16,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class PsbInputComponent implements ControlValueAccessor {
   @Input() disable = false;
 
-  private _value: string;
-  private onChange = (value: string) => {};
-  onTouche = () => {};
+  onTouchedCallback = () => {};
+  private innerValue: string;
+  private onChangeCallback = (value: string) => {};
 
   get value(): string {
-    return this._value;
+    return this.innerValue;
   }
 
   set value(newValue: string) {
-    if (this._value === newValue) {
-      return;
+    if (this.innerValue !== newValue) {
+      this.innerValue = newValue;
+      this.onChangeCallback(this.innerValue);
+      this.onTouchedCallback();
     }
-    this._value = newValue;
-    this.onChange(this._value);
-    this.onTouche();
   }
 
   updateValue(insideValue: string): void {
@@ -42,11 +41,11 @@ export class PsbInputComponent implements ControlValueAccessor {
   }
 
   registerOnChange(fn: any): void {
-    this.onChange(fn);
+    this.onChangeCallback = fn;
   }
 
   registerOnTouched(fn: () => {}): void {
-    this.onTouche();
+    this.onTouchedCallback = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {
